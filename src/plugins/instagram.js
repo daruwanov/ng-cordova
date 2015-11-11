@@ -1,6 +1,7 @@
 // install   :   cordova plugins add https://github.com/vstirbu/InstagramPlugin.git
 // link      :   https://github.com/vstirbu/InstagramPlugin
 
+/* globals Instagram: true */
 angular.module('ngCordova.plugins.instagram', [])
 
 .factory('$cordovaInstagram', ['$q', function ($q) {
@@ -37,7 +38,7 @@ angular.module('ngCordova.plugins.instagram', [])
         if (err) {
           q.reject(err);
         } else {
-          q.resolve(installed || true);
+          q.resolve(installed);
         }
       });
       return q.promise;
